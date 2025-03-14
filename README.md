@@ -17,7 +17,7 @@ Social Context API is a **FastAPI**-based application that provides **user authe
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/yourusername/social-context-api.git
+git clone https://github.com/yourusername/social-context-api.git<br>
 cd Path
 
 ### 2️⃣ Create a Virtual Environment
@@ -40,3 +40,26 @@ ACCESS_TOKEN_EXPIRE_MINUTES = (ACCESS_TOKEN_EXPIRE_MINUTES) 30 (My Config)<br>
 ###  5️⃣ DB schema
 <img src="DB.jpg" alt="Screenshot DB Schema">
 
+
+📁 Folder Structure
+
+src/
+│── app/
+│   │── main.py              # Main entry point
+│   │── routes/
+│   │   │── users.py         # User-related endpoints
+│   │   │── roles.py         # Role management
+│   │   │── posts.py         # Post management
+│   │── security/
+│   │   │── auth.py          # Authentication & role checking
+│   │   │── hash.py          # Password hashing
+│   │   │── jwt.py           # JWT token functions
+│   │── models/
+│   │   │── dbConnection.py  # Database connection
+│   │   │── user.py          # User model
+│   │   │── role.py          # Role model
+│   │   │── post.py          # Post model
+│── requirements.txt         # Dependencies
+│── README.md                # Documentation
+│── .env                     # Environment variables
+|run.py                      # Run point (Python run.py)
