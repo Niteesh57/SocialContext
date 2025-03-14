@@ -40,6 +40,206 @@ ACCESS_TOKEN_EXPIRE_MINUTES = (ACCESS_TOKEN_EXPIRE_MINUTES) 30 (My Config)<br>
 ###  5️⃣ DB schema
 <img src="DB.jpg" alt="Screenshot DB Schema">
 
+5️⃣ Run Database Migrations
+
+Run --- Python src/Models/dbConnection.py (Make Sure You Uncomment Models)
+
+6️⃣ Start the FastAPI Server
+
+Run --- Python run.py
+
+7️⃣ Access API Documentation
+
+Swagger UI: http://127.0.0.1:8000/docs<br>
+ReDoc: http://127.0.0.1:8000/redoc
+
+
+
+🔐 Authentication & Role-Based Access
+
+1️⃣ User Login (/users/login)
+
+  Authentication: JWT (Bearer Token)<br>
+  Token Type: Bearer
+
+# 📌 API Documentation
+
+## 1️⃣ User Authentication
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+            <th>Access</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td><code>/usersAll</code></td>
+            <td>Get all users</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td><code>/users/login</code></td>
+            <td>Authenticate user & get JWT</td>
+            <td>Public</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td><code>/users/</code></td>
+            <td>Create a new user</td>
+            <td>Public</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td><code>/users/{user_id}</code></td>
+            <td>Update user details</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td><code>/users/{user_id}</code></td>
+            <td>Delete user & role mappings</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td><code>/usersById/{id}</code></td>
+            <td>Get user by ID</td>
+            <td>Admin</td>
+        </tr>
+    </tbody>
+</table>
+
+
+# 📌 Role Management API (Admin Only)
+
+## 2️⃣ Role Management Endpoints
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+            <th>Access</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td><code>/rolesAll</code></td>
+            <td>Get all roles</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td><code>/roles/</code></td>
+            <td>Create a new role</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td><code>/usersByRole/{role_name}</code></td>
+            <td>Get users by role name</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td><code>/roles/{role_id}</code></td>
+            <td>Delete role and associated users/posts</td>
+            <td>Admin</td>
+        </tr>
+    </tbody>
+</table>
+
+
+# 📌 Role Mapping API (Admin Only)
+
+## 3️⃣ Role Mapping Endpoints
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+            <th>Access</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td><code>/rolesMapAll</code></td>
+            <td>Get all role mappings</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td><code>/role-mappings</code></td>
+            <td>Create a new role mapping</td>
+            <td>Admin</td>
+        </tr>
+    </tbody>
+</table>
+
+# 📌 Post Management API
+
+## 4️⃣ Post Management Endpoints
+
+<table>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Endpoint</th>
+            <th>Description</th>
+            <th>Access</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>GET</td>
+            <td><code>/postsAll</code></td>
+            <td>Get all posts</td>
+            <td>Authenticated Users</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td><code>/posts/{userId}/user</code></td>
+            <td>Get posts by user ID</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td><code>/post-create</code></td>
+            <td>Create a new post</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td><code>/{post_id}</code></td>
+            <td>Get post by ID</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td><code>/{post_id}</code></td>
+            <td>Update post details</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td><code>/{post_id}</code></td>
+            <td>Delete post</td>
+            <td>Admin</td>
+        </tr>
+    </tbody>
+</table>
+
 
 📁 Folder Structure
 
@@ -49,6 +249,7 @@ src/<br>
 │   │── routes/<br>
 │   │   │── users.py         # User-related endpoints<br>
 │   │   │── roles.py         # Role management<br>
+│   │   │── roleMap.py         # RoleMapping management<br>
 │   │   │── posts.py         # Post management<br>
 │   │── security/<br>
 │   │   │── auth.py          # Authentication & role checking<br>
@@ -58,10 +259,16 @@ src/<br>
 │   │   │── dbConnection.py  # Database connection<br>
 │   │   │── user.py          # User model<br>
 │   │   │── role.py          # Role model<br>
+│   │   │── roleMapping.py   # RoleMapping model<br>
 │   │   │── post.py          # Post model<br>
-|   |── Validation/<br>
-|   |
+│   │── Validation/<br>
+│   │
 │── requirements.txt         # Dependencies<br>
 │── README.md                # Documentation<br>
 │── .env                     # Environment variables<br>
 |run.py                      # Run point (Python run.py)<br>
+
+
+👨‍💻 Author<br>
+B V Nagi Reddy<br>
+nagireddybv5@gmail.com<br>
