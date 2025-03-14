@@ -38,5 +38,5 @@ ALGORITHM = (ALGORITHM) "HS256" (My Config)<br>
 ACCESS_TOKEN_EXPIRE_MINUTES = (ACCESS_TOKEN_EXPIRE_MINUTES) 30 (My Config)<br>
 
 ###  5️⃣ DB schema
-
+<img src="DB.jpg" alt="Screenshot DB Schema">
 
