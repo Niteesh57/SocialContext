@@ -17,7 +17,7 @@ Social Context API is a **FastAPI**-based application that provides **user authe
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/yourusername/social-context-api.git<br>
+git clone https://github.com/Niteesh57/SocialContext.git<br>
 cd Path
 
 ### 2️⃣ Create a Virtual Environment
