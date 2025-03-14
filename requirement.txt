@@ -1,0 +1,9 @@
+fastapi[all] 
+sqlalchemy 
+psycopg2 
+sqlmodel
+python-jose[cryptography] 
+passlib[bcrypt]
+python-multipart
+pyjwt
+logger
