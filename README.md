@@ -48,18 +48,20 @@ src/<br>
 │   │── main.py              # Main entry point<br>
 │   │── routes/<br>
 │   │   │── users.py         # User-related endpoints<br>
-│   │   │── roles.py         # Role management
-│   │   │── posts.py         # Post management
-│   │── security/
-│   │   │── auth.py          # Authentication & role checking
-│   │   │── hash.py          # Password hashing
-│   │   │── jwt.py           # JWT token functions
-│   │── models/
-│   │   │── dbConnection.py  # Database connection
-│   │   │── user.py          # User model
-│   │   │── role.py          # Role model
-│   │   │── post.py          # Post model
-│── requirements.txt         # Dependencies
-│── README.md                # Documentation
-│── .env                     # Environment variables
-|run.py                      # Run point (Python run.py)
+│   │   │── roles.py         # Role management<br>
+│   │   │── posts.py         # Post management<br>
+│   │── security/<br>
+│   │   │── auth.py          # Authentication & role checking<br>
+│   │   │── hash.py          # Password hashing<br>
+│   │   │── jwt.py           # JWT token functions<br>
+│   │── models/<br>
+│   │   │── dbConnection.py  # Database connection<br>
+│   │   │── user.py          # User model<br>
+│   │   │── role.py          # Role model<br>
+│   │   │── post.py          # Post model<br>
+|   |── Validation/<br>
+|   |
+│── requirements.txt         # Dependencies<br>
+│── README.md                # Documentation<br>
+│── .env                     # Environment variables<br>
+|run.py                      # Run point (Python run.py)<br>
