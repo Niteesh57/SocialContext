@@ -43,11 +43,11 @@ ACCESS_TOKEN_EXPIRE_MINUTES = (ACCESS_TOKEN_EXPIRE_MINUTES) 30 (My Config)<br>
 
 📁 Folder Structure
 
-src/
-│── app/
-│   │── main.py              # Main entry point
-│   │── routes/
-│   │   │── users.py         # User-related endpoints
+src/<br>
+│── app/<br>
+│   │── main.py              # Main entry point<br>
+│   │── routes/<br>
+│   │   │── users.py         # User-related endpoints<br>
 │   │   │── roles.py         # Role management
 │   │   │── posts.py         # Post management
 │   │── security/
