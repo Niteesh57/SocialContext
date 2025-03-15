@@ -13,6 +13,14 @@ Social Context API is a **FastAPI**-based application that provides **user authe
 
 ---
 
+📌 Prerequisites
+Before using this project, ensure you have:
+
+Python 3.10+ installed<br>
+FastAPI & Dependencies installed<br>
+PostgreSQL for database support<br>
+Postman or In-built Swagger API testing<br>
+
 ## ⚡ Installation Guide
 
 ### 1️⃣ Clone the Repository
