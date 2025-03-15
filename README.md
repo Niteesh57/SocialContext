@@ -30,7 +30,7 @@ cd Path
 
 ### 2️⃣ Create a Virtual Environment
 
-python -m venv env
+python -m venv env<br>
 env\Scripts\activate  (On Windows)(My Python Version 3.11)
 
 ### 3️⃣ Install Dependencies
