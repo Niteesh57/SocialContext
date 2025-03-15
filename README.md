@@ -100,7 +100,7 @@ ReDoc: http://127.0.0.1:8000/redoc
             <td>POST</td>
             <td><code>/users/</code></td>
             <td>Create a new user</td>
-            <td>Public</td>
+            <td>Admin</td>
         </tr>
         <tr>
             <td>PUT</td>
