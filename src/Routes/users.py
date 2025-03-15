@@ -44,7 +44,7 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
 
 
 
-@router.post("/", response_model=User, summary="Create User", status_code=201)
+@router.post("/", response_model=User, summary="Create User", status_code=201, dependencies=[Depends(is_admin)])
 async def create_user(user_create: UserCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     existing_user = db.query(User).filter(User.username == user_create.username).first()
     email_existing = db.query(User).filter(User.email == user_create.email).first()
